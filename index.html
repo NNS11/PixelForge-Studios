@@ -4,29 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PixelForge Studios</title>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body class="dark-mode">
 
-    <!-- Header Simples -->
+    <!-- Header -->
     <header>
         <nav class="navbar">
             <div class="nav-logo">
                 <img src="assets/img/logo.jpeg" alt="Logo Small">
                 <span>PixelForge</span>
             </div>
-            <ul class="nav-links">
+
+            <!-- Links desktop -->
+            <ul class="nav-links" id="nav-menu">
                 <li><a href="#jogos">Jogos</a></li>
                 <li><a href="#contato">Contato</a></li>
                 <li><button id="theme-toggle">Tema</button></li>
             </ul>
+
+            <!-- Botão hamburguer (só mobile) -->
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </nav>
     </header>
 
+    <!-- Overlay do drawer -->
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+
+    <!-- Drawer lateral -->
+    <nav class="drawer" id="drawer">
+        <div class="drawer-header">
+            <span>Menu</span>
+            <button class="drawer-close" id="drawer-close" aria-label="Fechar menu">&#x2715;</button>
+        </div>
+        <ul class="drawer-links">
+            <li><a href="#jogos">🎮 Jogos</a></li>
+            <li><a href="#contato">✉️ Contato</a></li>
+            <li class="drawer-divider"></li>
+            <li><button id="drawer-theme-toggle">🌓 Alternar Tema</button></li>
+        </ul>
+    </nav>
+
     <main>
-        <!-- Início: Logo em Destaque -->
+        <!-- Hero -->
         <section id="home" class="hero">
             <img src="assets/img/logo.jpeg" alt="PixelForge Logo Principal" class="hero-logo">
             <h1 class="pixel-font">PixelForge Studios</h1>
@@ -34,12 +59,11 @@
             <a href="#jogos" class="btn-main">Ver Catálogo</a>
         </section>
 
-        <!-- Seção de Jogos -->
+        <!-- Jogos -->
         <section id="jogos" class="content-section">
             <h2 class="section-title">Nossa Loja</h2>
             <div class="games-grid">
-                
-                <!-- Jogos (Dados puxados pelo JS) -->
+
                 <div class="game-card" data-game="fifa">
                     <img src="assets/img/fifa.jpg" alt="FIFA 26">
                     <div class="card-text">
@@ -95,7 +119,12 @@
         <section class="content-section">
             <h2 class="section-title">Trailer Oficial</h2>
             <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/vCp5JLnd1Eo?si=StjqIBEk1VEtm0f5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/vCp5JLnd1Eo?si=StjqIBEk1VEtm0f5"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
             </div>
         </section>
 
@@ -103,7 +132,7 @@
         <section id="comunidade" class="content-section">
             <h2 class="section-title">Comunidade</h2>
             <div class="testimonials">
-                <div class="test-item">"Curto todos os jogos que tem no PixerForge Studios." - @neymarjr</div>
+                <div class="test-item">"Curto todos os jogos que tem no PixelForge Studios." - @neymarjr</div>
                 <div class="test-item">"Site bonito e jogos épicos." - @romario</div>
             </div>
         </section>
@@ -124,7 +153,7 @@
         <p>&copy; 2026 PixelForge Studios | suportepixelforge@gmail.com</p>
     </footer>
 
-    <!-- Pop-up (Modal) -->
+    <!-- Modal do jogo -->
     <div id="game-modal" class="modal">
         <div class="modal-box">
             <span class="close-btn">&times;</span>
